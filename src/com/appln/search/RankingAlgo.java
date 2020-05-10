@@ -40,7 +40,7 @@ class RankingAlgo {
                     	int updatecount = indices.get(token);
                         indices.put(token, updatecount++);
                     } else {
-                        indices.put(token, 1);
+                        indices.put(token.toLowerCase(), 1);
                     }
                 	}
                 }
@@ -53,8 +53,9 @@ class RankingAlgo {
     }
 
     private String removePunctuation(String line) {
-    	String punctuation = "!#$./\'%@^&*";
+    	String punctuation = "\'!#$./,;:\'%@^&*";
     	line = line.replaceAll(punctuation,""); 
+    	line = line.replaceAll("[.,;:-",""); 
     	line = line.replaceAll("\\s\\s","\\s"); 
 		return line;
 	}

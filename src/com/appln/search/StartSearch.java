@@ -10,7 +10,7 @@ public class StartSearch {
     public static void main(String[] args) {
 	    //can crawl domain based websites and store that dataset as well
     	//data sets directory path
-	    String repoPath = "";
+	    String repoPath = "/Users/sukanyach/eclipse-workspace/JavaBasicSearch/src/com/appln/resources";
 	    final File dirToSearch = new File(repoPath);
 	    System.out.print("Fetch data");
 
@@ -35,7 +35,7 @@ public class StartSearch {
             if(line.equals("quit")) {
                 break;
             } else {
-                rankFiles(line, searchRanker, RankingAlgos);
+                rankFiles(line.toLowerCase(), searchRanker, RankingAlgos);
                 String searchRank = searchRanker.rankFileSearch(line);
                 System.out.println(searchRank);
             }
